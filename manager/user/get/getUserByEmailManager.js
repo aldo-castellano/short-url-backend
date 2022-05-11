@@ -4,7 +4,7 @@ const getUserByEmailManager = async (user) => {
   try {
     return await User.findOne({ email: user });
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 export { getUserByEmailManager };
