@@ -9,7 +9,7 @@ const getOriginalUrl = async (req, res) => {
     }
     return res.json(web.original_url);
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 
