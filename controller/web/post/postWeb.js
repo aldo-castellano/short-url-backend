@@ -3,15 +3,24 @@ import validator from "validator";
 const postWeb = async (req, res) => {
   try {
     let data;
-    console.log(req.body);
     const option = { require_protocol: true };
-    // console.log(validator.isURL(path, option));
-    if (validator.isURL(req.body.original_url, option)) {
+
+    if (
+      validator.isURL(req.body.original_url, option) === true &&
+      validator.isURL(req.body.original_url) === true
+    ) {
       data = await postWebManager(req.body);
-    } else {
+    } else if (
+      validator.isURL(req.body.original_url, option) === true ||
+      validator.isURL(req.body.original_url) === true
+    ) {
       req.body.original_url = `https://${req.body.original_url}`;
-      console.log("dentro", req.body);
+
       data = await postWebManager(req.body);
+    }
+    if (!req.body.original_url) {
+      const error = new Error("url invalida");
+      res.status(400).json({ msg: error.message });
     }
 
     return res.json(data);
