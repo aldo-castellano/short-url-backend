@@ -19,5 +19,5 @@ app.use("/api", routerIndex);
 
 const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
-  console.log(`servidor funcionando en el puerto ${PORT}`);
+  console.log(`server running on the port ${PORT}`);
 });
