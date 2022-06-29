@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
-
+// import { token } from "../helper/token.js";
+// import jwt from "jsonwebtoken";
+// const token = () => {
+//   return jwt.sign(`${Date.now}`, process.env.JWT_SECRET);
+// };
 const userSchema = mongoose.Schema({
   name: {
     type: String,
@@ -17,6 +21,10 @@ const userSchema = mongoose.Schema({
     unique: true,
     trim: true,
   },
+  // confirm_token: {
+  //   type: String,
+  //   default: token,
+  // },
   confirm: {
     type: Boolean,
     default: false,

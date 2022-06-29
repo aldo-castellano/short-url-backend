@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { getUserById } from "../manager/user/get/getUserById.js";
 
-const checkAuth = (req, res, next) => {
+const checkAuth = async (req, res, next) => {
   let token;
   if (
     req.headers.authorization &&
@@ -11,7 +11,8 @@ const checkAuth = (req, res, next) => {
       token = req.headers.authorization.split(" ")[1];
 
       const decode = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = getUserById(decode.id);
+      req.user = await getUserById(decode.id);
+
       return next();
     } catch (error) {
       const e = new Error("token no valido");

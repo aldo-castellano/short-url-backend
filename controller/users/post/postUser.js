@@ -3,6 +3,7 @@ import { getUserByEmailManager } from "../../../manager/user/get/getUserByEmailM
 import jwt from "jsonwebtoken";
 
 const postUser = async (req, res) => {
+  console.log(req);
   try {
     const user = await getUserByEmailManager(req.body.email);
     if (user) {

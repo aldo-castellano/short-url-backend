@@ -11,13 +11,17 @@ const autenticateUser = async (req, res) => {
       const error = new Error("ususario no encontrado");
       return res.status(400).json({ msg: error.message });
     }
+    if (!user.confirm) {
+      const error = new Error("Usuario no autenticado");
+      return res.status(401).json({ msg: error.message });
+    }
 
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
 
     if (await user.validatePassword(password)) {
       return res.json({ token: token });
     } else {
-      return res.status(400).json({ msg: "usuario o contraseña incorrecto" });
+      return res.status(401).json({ msg: "usuario o contraseña incorrecto" });
     }
   } catch (error) {
     error;

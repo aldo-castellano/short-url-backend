@@ -1,6 +1,7 @@
 import { postWebManager } from "../../../manager/web/post/postWebManager.js";
 import validator from "validator";
 const postWeb = async (req, res) => {
+  console.log("dentro");
   try {
     let data;
     const option = { require_protocol: true };
@@ -22,6 +23,7 @@ const postWeb = async (req, res) => {
       const error = new Error("url invalida");
       res.status(400).json({ msg: error.message });
     }
+    console.log(data);
 
     return res.json(data);
   } catch (error) {

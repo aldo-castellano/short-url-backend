@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import shortid from "shortid";
 
 const webSchema = mongoose.Schema({
   original_url: {
@@ -9,7 +8,6 @@ const webSchema = mongoose.Schema({
   },
   short_path_url: {
     type: String,
-    default: shortid.generate,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
