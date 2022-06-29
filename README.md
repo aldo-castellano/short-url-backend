@@ -16,6 +16,12 @@ Is the Shortener API in charge of managing all the requests made to the database
 ## LANGUAGES AND TOOLS 🛠️
 <br>
 
+ <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://user-images.githubusercontent.com/92597205/176458799-c1dc2282-a505-463c-b1b8-41498c3b2c2a.svg" alt="express" width="80" height="80"/> </a> 
+ 
+ <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://webimages.mongodb.com/_com_assets/cms/kuyj3d95v5vbmm2f4-horizontal_white.svg?auto=format%252Ccompress" alt="mongodb" width="80" height="80"/> </a>
+ 
+ <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://nodejs.org/static/images/logo.svg" alt="nodejs" width="80" height="80"/> </a> 
+
 <br>
 
 ## PREREQUISITES 
@@ -47,6 +53,9 @@ JWT_SECRET=keywords for jwt
 <br>
 
 and then you can use `nodemon` in terminal.
+
+
+
 
 
 
