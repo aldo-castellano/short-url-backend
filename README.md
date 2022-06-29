@@ -9,7 +9,8 @@ Developed and designed by [Aldo Castellano](https://www.linkedin.com/in/aldo-cas
 
 ## ABOUT THE PROJECT 🖐️
 <br>
-Is the Shortener API in charge of managing all the requests made to the database, as well as user authentication, data security, etc.
+
+Is [The Shortener](https://github.com/aldo-castellano/short-url-frontend "The Shortener") API in charge of managing all the requests made to the database, as well as user authentication, data security, etc.
 
 <br>
 
